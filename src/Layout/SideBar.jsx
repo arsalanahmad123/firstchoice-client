@@ -8,7 +8,7 @@ import { SiExpensify as Expense } from 'react-icons/si'
 import { GiProfit as Profit } from 'react-icons/gi'
 import { TbChartHistogram as Orders } from 'react-icons/tb'
 import NavList from '../Components/NavList'
-import logo from '../assets/logo2.png'
+import logo from '../assets/logo.png'
 
 const SideBar = () => {
     return (
