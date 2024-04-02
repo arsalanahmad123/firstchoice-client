@@ -34,15 +34,15 @@ const OrdersTracking = () => {
                     <div className='relative'>
                         <input
                             type='text'
-                            className='w-full lg:py-1 pl-5 lg:rounded-2xl bg-bgLight border-2 border-gray-700 text-white'
+                            className=' md:w-80 lg:py-1 pl-5 lg:rounded-2xl bg-bgLight border-2 rounded-xl border-gray-700 text-white'
                         />
-                        <CgSearch className='text-slate-700 m-auto absolute lg:right-5 lg:top-3  ' />
+                        <CgSearch className='text-slate-700 m-auto absolute  bottom-1 left-44 md:left-72  lg:right-5 lg:top-3  ' />
                     </div>
-                    <div className='flex justify-center items-center gap-x-3'>
+                    <div className='flex -ml-20 flex-col md:flex-row gap-2 justify-center items-center gap-x-3 pt-9  md:pt-0 '>
                         <span className='badge badge-neutral py-3 cursor-pointer  '>
                             pending
                         </span>
-                        <span className='badge badge-neutral py-3  cursor-pointer'>
+                        <span className='badge badge-success py-3  cursor-pointer'>
                             completed
                         </span>
                     </div>
@@ -50,7 +50,7 @@ const OrdersTracking = () => {
                 <div className='overflow-x-auto  bg-bgLight max-h-[76vh] mt-10 mx-5 rounded-xl '>
                     <table className='table table-md  text-white '>
                         <thead>
-                            <tr className='bg-darkorange text-white border-gray-700'>
+                            <tr className='bg-darkorange text-white  border-gray-700'>
                                 <th>Order ID</th>
                                 <th>Company</th>
                                 <th>Quantity</th>
@@ -58,7 +58,7 @@ const OrdersTracking = () => {
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {dummData.map((item) => (
                                 <tr key={item.id}>
                                     <td>{item.id}</td>
