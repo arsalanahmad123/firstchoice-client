@@ -30,7 +30,7 @@ const dummData = [
 const OrdersTracking = () => {
     return (
         <>
-                <div className='flex  justify-between items-center  gap-x-20 lg:pt-4 px-5'>
+                <div className='flex  flex-col md:flex-row lg:flex-row justify-between items-center  gap-x-20 lg:pt-4 px-5'>
                     <div className='relative'>
                         <input
                             type='text'
@@ -38,7 +38,7 @@ const OrdersTracking = () => {
                         />
                         <CgSearch className='text-slate-700 m-auto absolute  bottom-1 left-44 md:left-72  lg:right-5 lg:top-3  ' />
                     </div>
-                    <div className='flex -ml-20 flex-col md:flex-row gap-2 justify-center items-center gap-x-3 pt-9  md:pt-0 '>
+                    <div className='flex   md:flex-row gap-2 justify-center items-center gap-x-2 pt-3   md:pt-0 '>
                         <span className='badge badge-neutral py-3 cursor-pointer  '>
                             pending
                         </span>

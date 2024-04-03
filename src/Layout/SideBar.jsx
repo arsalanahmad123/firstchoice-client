@@ -10,11 +10,12 @@ import { TbChartHistogram as Orders } from 'react-icons/tb'
 import NavList from '../Components/NavList'
 import logo from '../assets/logo.png'
 
+
 const SideBar = () => {
     return (
         <>
             <div className=' hidden  min-w-[20%] bg-bgLight min-h-screen md:flex md:flex-col md:w-[24%] pt-8 px-3 '>
-                <img src={logo} alt='Logo' />
+                <img src={logo} alt='Logo'  />
                 <ul className='flex flex-col justify-center items-center w-full gap-y-2 mt-2'>
                     <NavList
                         icon={
@@ -53,6 +54,7 @@ const SideBar = () => {
 
                 </ul>
             </div>
+
         </>
     )
 }
