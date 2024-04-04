@@ -6,8 +6,9 @@ import OrdersTracking from '../Components/OrdersTracking';
 const Orders = () => {
     return (
         <>
-            <Wrapper title={'Orders'}>
+            <Wrapper title={'Orders'} >
                 <OrdersTracking/>
+               
             </Wrapper>
         </>
     )
