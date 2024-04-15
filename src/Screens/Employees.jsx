@@ -14,13 +14,7 @@ const Employees = () => {
                     {employees?.map((employee) => (
                         <EmployeeProfile
                             key={employee._id}
-                            name={employee.name}
-                            eid_no={employee.eid_no}
-                            labor_card_expiry={employee.labor_card_expiry}
-                            labor_card_no={employee.labor_card_no}
-                            eid_expiry={employee.eid_expiry}
-                            nationality={employee.nationality}
-                            documents={employee.documents}
+                            employee={employee}
                         />
                     ))}
                     {employees?.length === 0 && (
