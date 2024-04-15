@@ -7,6 +7,7 @@ import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
 const Navbar = ({ title }) => {
     const [show, setShow] = useState(false)
+    const companyName = JSON.parse(sessionStorage.getItem('company'))?.username
     const navigate = useNavigate()
 
     const handleLogout = async () => {
@@ -28,7 +29,7 @@ const Navbar = ({ title }) => {
                         className='relative flex justify-center items-center  hover:bg-bgLight px-6 py-2 rounded-md ml-auto'
                         onClick={() => setShow(!show)}
                     >
-                        <span className='cursor-pointer'>Admin</span>
+                        <span className='cursor-pointer'>{companyName}</span>
                         {show ? (
                             <BiChevronUp className='text-white cursor-pointer' />
                         ) : (
