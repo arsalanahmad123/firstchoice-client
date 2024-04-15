@@ -4,8 +4,8 @@ const NotificationCard = ({ notifications }) => {
     return (
         <div className='card card-compact w-full  shadow-2xl bg-bgLight -mt-8'>
             <div className='card-body'>
-                <di v className='text-white font-semibold'>
-                    {notifications && (
+                <div className='text-white font-semibold'>
+                    {notifications.length > 0 && (
                         <h1 className='text-xl'>
                             These Employees have expired Documents, Kindly check
                             it
@@ -16,7 +16,7 @@ const NotificationCard = ({ notifications }) => {
                             <li key={i}>{notification.name}</li>
                         ))}
                     </ul>
-                </di>
+                </div>
             </div>
         </div>
     )

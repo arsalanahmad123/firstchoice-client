@@ -24,7 +24,9 @@ const Dashboard = () => {
                             invoiceLength={invoiceLength}
                             pendingInvoiceLength={pendingInvoiceLength}
                         />
-                        <NotificationCard notifications={notifications} />
+                        {notifications.length > 0 && (
+                            <NotificationCard notifications={notifications} />
+                        )}
                     </div>
                 </div>
             </Wrapper>
