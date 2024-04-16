@@ -41,23 +41,28 @@ const OrdersTracking = ({ orders }) => {
                                     <td>{item.total_price}</td>
                                     <td>{item.total_price}</td>
                                     <td>
-                                        <span
-                                            className={`badge px-3 ${
-                                                item.status === 'pending' &&
-                                                'badge-warning'
-                                            } ${
-                                                item.status === 'completed' &&
-                                                'badge-success'
-                                            }
+                                        {item.status ? (
+                                            <span
+                                                className={`badge px-3 ${
+                                                    item.status === 'pending' &&
+                                                    'badge-warning'
+                                                } ${
+                                                    item.status ===
+                                                        'completed' &&
+                                                    'badge-success'
+                                                }
                                                 ${
                                                     item.status ===
                                                         'submitted' &&
                                                     'badge-neutral'
                                                 }
                                             `}
-                                        >
-                                            {item.status}
-                                        </span>
+                                            >
+                                                {item.status}
+                                            </span>
+                                        ) : (
+                                            'N/A'
+                                        )}
                                     </td>
                                 </tr>
                             ))}

@@ -8,7 +8,7 @@ const Dashboard = () => {
     const companyID = JSON.parse(sessionStorage.getItem('company'))?._id
     const companyName = JSON.parse(sessionStorage.getItem('company'))?.username
     const { data: employeeLength } = useFetch(`/employees/${companyID}`)
-    const { data: invoiceLength } = useFetch(`/invoices/${companyID}`)
+    const { data: invoiceLength } = useFetch(`/invoices/${companyName}`)
     const { data: pendingInvoiceLength } = useFetch(
         `/pending-invoices/${companyName}`,
     )

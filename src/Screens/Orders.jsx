@@ -5,8 +5,8 @@ import OrdersTracking from '../Components/OrdersTracking'
 import { useFetch } from '../Hooks/useFetch'
 
 const Orders = () => {
-    const companyID = JSON.parse(sessionStorage.getItem('company'))?._id
-    const { data: orders } = useFetch(`invoices/${companyID}`)
+    const companyID = JSON.parse(sessionStorage.getItem('company'))?.username
+    const { data: orders } = useFetch(`/all-invoices/${companyID}`)
     return (
         <>
             <Wrapper title={'Orders'}>

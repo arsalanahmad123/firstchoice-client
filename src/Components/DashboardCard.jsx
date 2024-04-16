@@ -43,7 +43,7 @@ const DashboardCard = ({
                 >
                     <GiProfit className='md:size-10 size-8 pt-2     md:hidden lg:block  lg:ml-60 ' />
                     <div className='card-body '>
-                        <h2 className='text-2xl'>Pending Invoices</h2>
+                        <h2 className='text-2xl'>Pending Orders</h2>
                         <p className='text-3xl italic font-bold'>
                             {pendingInvoiceLength}
                         </p>

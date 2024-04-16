@@ -7,9 +7,17 @@ const Services = () => {
         <>
             <Wrapper title={'Services'}>
                 <div className='flex gap-x-6'>
-           <Service_Card  Service_Name="service name will be here" costPrice="costPrice" salePrice="salePrice" />
-           <Service_Card  Service_Name="service name will be here" costPrice="costPrice" salePrice="salePrice" />
-           </div>
+                    <Service_Card
+                        Service_Name='service name will be here'
+                        costPrice='costPrice'
+                        salePrice='salePrice'
+                    />
+                    <Service_Card
+                        Service_Name='service name will be here'
+                        costPrice='costPrice'
+                        salePrice='salePrice'
+                    />
+                </div>
             </Wrapper>
         </>
     )
