@@ -4,8 +4,8 @@ import AppLayout from '../Layout/AppLayout'
 import EmployeeProfile from '../Components/EmployeeProfile'
 import { useFetch } from '../Hooks/useFetch'
 const Employees = () => {
-    const companyID = JSON.parse(sessionStorage.getItem('company'))?._id
-    const { data: employees } = useFetch(`/${companyID}/employees`)
+    const companyID = JSON.parse(localStorage.getItem('company'))?._id
+    const { data: employees } = useFetch(`${companyID}/employees`)
 
     return (
         <Wrapper title='Employees'>

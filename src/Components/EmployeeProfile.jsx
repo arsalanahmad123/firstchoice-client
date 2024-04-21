@@ -60,7 +60,9 @@ const EmployeeProfile = ({ employee }) => {
                 <div className='flex flex-row justify-between items-center gap-x-5'>
                     <p className='text-[15px] text-left'>EID Expiry</p>
                     <p className='text-sm text-left'>
-                        {new Date(employee.eid_expiry).toLocaleDateString()}
+                        {new Date(employee.eid_expiry).getDate()}/
+                        {new Date(employee.eid_expiry).getMonth() + 1}/
+                        {new Date(employee.eid_expiry).getFullYear()}
                     </p>
                 </div>
                 <div className='flex flex-row justify-between items-center gap-x-5'>
@@ -72,9 +74,21 @@ const EmployeeProfile = ({ employee }) => {
                 <div className='flex flex-row justify-between items-center gap-x-5'>
                     <p className='text-[15px] text-left'>Labor Card Expiry</p>
                     <p className='text-sm text-left'>
-                        {new Date(
-                            employee.labor_card_expiry,
-                        ).toLocaleDateString()}
+                        {new Date(employee.labor_card_expiry).getDate()}/
+                        {new Date(employee.labor_card_expiry).getMonth() + 1}/
+                        {new Date(employee.labor_card_expiry).getFullYear()}
+                    </p>
+                </div>
+                <div className='flex flex-row justify-between items-center gap-x-5'>
+                    <p className='text-[15px] text-left'>Passport No</p>
+                    <p className='text-sm text-left'>{employee.passport_no}</p>
+                </div>
+                <div className='flex flex-row justify-between items-center gap-x-5'>
+                    <p className='text-[15px] text-left'>Passport Expiry</p>
+                    <p className='text-sm text-left'>
+                        {new Date(employee.passport_expiry).getDate()}/
+                        {new Date(employee.passport_expiry).getMonth() + 1}/
+                        {new Date(employee.passport_expiry).getFullYear()}
                     </p>
                 </div>
                 <button

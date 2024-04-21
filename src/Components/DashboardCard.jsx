@@ -16,7 +16,7 @@ const DashboardCard = ({
                     to={'/employees'}
                     className='card w-64 md:w-72 bg-[#dbcaff] text-black'
                 >
-                    <HiBuildingOffice2 className='md:size-14 size-8 pt-2  pr-3    md:hidden lg:block  lg:ml-60' />
+                    <HiBuildingOffice2 className='md:size-10 size-8 pt-2  md:hidden lg:block  lg:ml-60' />
                     <div className='card-body'>
                         <h2 className='text-2xl  '>Total Employees</h2>
                         <p className='text-3xl italic font-bold'>

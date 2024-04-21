@@ -38,32 +38,15 @@ const OrdersTracking = ({ orders }) => {
                                 <tr key={item._id}>
                                     <td>{item._id}</td>
                                     <td>{item.company}</td>
-                                    <td>{item.total_price}</td>
-                                    <td>{item.total_price}</td>
                                     <td>
-                                        {item.status ? (
-                                            <span
-                                                className={`badge px-3 ${
-                                                    item.status === 'pending' &&
-                                                    'badge-warning'
-                                                } ${
-                                                    item.status ===
-                                                        'completed' &&
-                                                    'badge-success'
-                                                }
-                                                ${
-                                                    item.status ===
-                                                        'submitted' &&
-                                                    'badge-neutral'
-                                                }
-                                            `}
-                                            >
-                                                {item.status}
-                                            </span>
-                                        ) : (
-                                            'N/A'
-                                        )}
+                                        {item.services?.map((service) => (
+                                            <p key={service.service}>
+                                                {service.quantity}
+                                            </p>
+                                        ))}
                                     </td>
+                                    <td>{item.total_price}</td>
+                                    <td>{item.status ? item.status : 'N/A'}</td>
                                 </tr>
                             ))}
                         </tbody>

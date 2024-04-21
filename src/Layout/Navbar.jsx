@@ -7,14 +7,13 @@ import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
 const Navbar = ({ title }) => {
     const [show, setShow] = useState(false)
-    const companyName = JSON.parse(sessionStorage.getItem('company'))?.username
+    const companyName = JSON.parse(localStorage.getItem('company'))?.username
     const navigate = useNavigate()
 
     const handleLogout = async () => {
-        await api.delete('/logout')
-        sessionStorage.removeItem('token')
-        sessionStorage.removeItem('company')
-        sessionStorage.removeItem('loggedIn')
+        localStorage.removeItem('token')
+        localStorage.removeItem('company')
+        localStorage.removeItem('loggedIn')
         navigate('/login')
         toast.success('Logout Successful')
     }
