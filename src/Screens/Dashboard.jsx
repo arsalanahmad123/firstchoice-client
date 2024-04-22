@@ -32,22 +32,91 @@ const Dashboard = () => {
                                 />
                                 <div className='flex flex-col gap-y-2'>
                                     <div className='flex flex-row justify-start items-center gap-x-5'>
-                                        <p className='md:text-lg text-lightGold'>
+                                        <p className='text-lightGold'>
                                             Username:
                                         </p>
                                         <span> {company.username}</span>
                                     </div>
                                     <div className='flex flex-row justify-start items-center gap-x-5'>
-                                        <p className='md:text-lg text-lightGold'>
-                                            Email:
-                                        </p>
+                                        <p className='text-lightGold'>Email:</p>
                                         <span> {company.email}</span>
                                     </div>
                                     <div className='flex flex-row justify-start items-center gap-x-5'>
-                                        <p className='md:text-lg text-lightGold'>
-                                            Phone
-                                        </p>
+                                        <p className=' text-lightGold'>Phone</p>
                                         <span> {company.phone}</span>
+                                    </div>
+                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                        <p className=' text-lightGold'>
+                                            Licence Expiry
+                                        </p>
+                                        <span>
+                                            {new Date(
+                                                company.licence_expiry,
+                                            ).getDate()}
+                                            /
+                                            {new Date(
+                                                company.licence_expiry,
+                                            ).getMonth() + 1}
+                                            /
+                                            {new Date(
+                                                company.licence_expiry,
+                                            ).getFullYear()}
+                                        </span>
+                                    </div>
+                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                        <p className=' text-lightGold'>
+                                            Image Card Expiry
+                                        </p>
+                                        <span>
+                                            {' '}
+                                            {new Date(
+                                                company.img_card_expiry,
+                                            ).getDate()}
+                                            /
+                                            {new Date(
+                                                company.img_card_expiry,
+                                            ).getMonth() + 1}
+                                            /
+                                            {new Date(
+                                                company.img_card_expiry,
+                                            ).getFullYear()}
+                                        </span>
+                                    </div>
+                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                        <p className=' text-lightGold'>
+                                            Least Contract Expiry
+                                        </p>
+                                        <span>
+                                            {new Date(
+                                                company.least_contract_expiry,
+                                            ).getDate()}
+                                            /
+                                            {new Date(
+                                                company.least_contract_expiry,
+                                            ).getMonth() + 1}
+                                            /
+                                            {new Date(
+                                                company.least_contract_expiry,
+                                            ).getFullYear()}
+                                        </span>
+                                    </div>
+                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                        <p className=' text-lightGold'>
+                                            E-Channel Expiry
+                                        </p>
+                                        <span>
+                                            {new Date(
+                                                company.e_channel_expiry,
+                                            ).getDate()}
+                                            /
+                                            {new Date(
+                                                company.e_channel_expiry,
+                                            ).getMonth() + 1}
+                                            /
+                                            {new Date(
+                                                company.e_channel_expiry,
+                                            ).getFullYear()}
+                                        </span>
                                     </div>
                                     <div className='flex flex-row justify-center items-center gap-x-5'>
                                         <p className='md:text-lg text-lightGold'>
