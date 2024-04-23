@@ -1,7 +1,25 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { CgSearch } from 'react-icons/cg'
 
 const OrdersTracking = ({ orders }) => {
+    const [filteredOrders, setFilteredOrders] = useState(null)
+
+    const handleSearch = (e) => {
+        const query = e.target.value
+        if (query) {
+            const filtered = orders.filter((order) => {
+                return order.title.toLowerCase().includes(query.toLowerCase())
+            })
+            setFilteredOrders(filtered)
+        } else {
+            setFilteredOrders(orders)
+        }
+    }
+
+    useEffect(() => {
+        setFilteredOrders(orders)
+    }, [orders])
+
     return (
         <>
             <div className='flex  flex-col md:flex-row lg:flex-row justify-between items-center  gap-x-20 lg:pt-4 px-5'>
@@ -9,41 +27,51 @@ const OrdersTracking = ({ orders }) => {
                     <input
                         type='text'
                         className=' md:w-80 lg:py-1 pl-5 lg:rounded-2xl bg-bgLight border-2 rounded-xl border-gray-700 text-white'
+                        onChange={(e) => handleSearch(e)}
+                        placeholder='Search Order By Title'
                     />
-                    <CgSearch className='text-slate-700 m-auto absolute  bottom-1 left-44 md:left-72  lg:right-5 lg:top-3  ' />
-                </div>
-                <div className='flex   md:flex-row gap-2 justify-center items-center gap-x-2 pt-3   md:pt-0 '>
-                    <span className='badge badge-neutral py-3 cursor-pointer  '>
-                        pending
-                    </span>
-                    <span className='badge badge-success py-3  cursor-pointer'>
-                        completed
-                    </span>
+                    <CgSearch className='text-slate-700 m-auto absolute  bottom-1 left-44 md:left-72  lg:right-5 lg:top-1.5' />
                 </div>
             </div>
-            {orders && (
+            {filteredOrders && (
                 <div className='overflow-x-auto  bg-bgLight max-h-[76vh] mt-10 mx-5 rounded-xl '>
                     <table className='table table-md  text-white '>
                         <thead>
                             <tr className='bg-darkorange text-white  border-gray-700'>
-                                <th>Order ID</th>
+                                <th>Order</th>
                                 <th>Company</th>
+                                <th>Service</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {orders?.map((item) => (
+                            {filteredOrders?.map((item) => (
                                 <tr key={item._id}>
-                                    <td>{item._id}</td>
+                                    <td>{item.title}</td>
                                     <td>{item.company}</td>
-                                    <td>
+                                    <td className='flex flex-row gap-x-1 flex-wrap'>
                                         {item.services?.map((service) => (
-                                            <p key={service.service}>
-                                                {service.quantity}
+                                            <p
+                                                key={service.service}
+                                                className='badge'
+                                            >
+                                                {service.service}
                                             </p>
                                         ))}
+                                    </td>
+                                    <td>
+                                        <div className='flex flex-row gap-x-1 flex-wrap'>
+                                            {item.services?.map((service) => (
+                                                <p
+                                                    key={service.service}
+                                                    className='badge'
+                                                >
+                                                    {service.quantity}
+                                                </p>
+                                            ))}
+                                        </div>
                                     </td>
                                     <td>{item.total_price}</td>
                                     <td>{item.status ? item.status : 'N/A'}</td>

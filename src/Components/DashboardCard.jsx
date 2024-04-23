@@ -1,37 +1,33 @@
 import React from 'react'
-import { GiProfit } from 'react-icons/gi'
-import { FaSortAmountUp } from 'react-icons/fa'
-import { HiBuildingOffice2 } from 'react-icons/hi2'
 import { NavLink } from 'react-router-dom'
 
 const DashboardCard = ({
     employeeLength,
     invoiceLength,
     pendingInvoiceLength,
+    pendingAmount,
 }) => {
     return (
         <>
-            <div className='flex  flex-col gap-y-2  font-semibold md:flex-row justify-center  items-center py-1 gap-x-5 w-full'>
+            <div className='flex  flex-col gap-y-2  font-semibold md:flex-row justify-center  items-start py-1 gap-x-4 w-full md:flex-wrap'>
                 <NavLink
                     to={'/employees'}
-                    className='card w-64 md:w-72 bg-[#dbcaff] text-black'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
                 >
-                    <HiBuildingOffice2 className='md:size-10 size-8 pt-2  md:hidden lg:block  lg:ml-60' />
-                    <div className='card-body'>
-                        <h2 className='text-2xl  '>Total Employees</h2>
-                        <p className='text-3xl italic font-bold'>
+                    <div className=''>
+                        <h2 className='text-2xl'>Total Employees</h2>
+                        <p className='text-3xl italic font-bold text-darkorange'>
                             {employeeLength}
                         </p>
                     </div>
                 </NavLink>
                 <NavLink
                     to={'/orders'}
-                    className='card w-64 md:w-72  bg-[#fffac3] text-black'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
                 >
-                    <FaSortAmountUp className='md:size-10 size-8 pt-2 md:hidden lg:block lg:ml-60' />
-                    <div className='card-body '>
+                    <div className=''>
                         <h2 className=' text-2xl'>Invoices</h2>
-                        <p className='text-3xl italic font-bold'>
+                        <p className='text-3xl italic font-bold text-darkorange'>
                             {' '}
                             {invoiceLength}
                         </p>
@@ -39,16 +35,23 @@ const DashboardCard = ({
                 </NavLink>
                 <NavLink
                     to={'/orders'}
-                    className='card w-64 md:w-72 bg-[#ffccbe] text-black'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
                 >
-                    <GiProfit className='md:size-10 size-8 pt-2     md:hidden lg:block  lg:ml-60 ' />
-                    <div className='card-body '>
+                    <div>
                         <h2 className='text-2xl'>Pending Orders</h2>
-                        <p className='text-3xl italic font-bold'>
+                        <p className='text-3xl italic font-bold text-darkorange'>
                             {pendingInvoiceLength}
                         </p>
                     </div>
                 </NavLink>
+                <div className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'>
+                    <div className=''>
+                        <h2 className='text-2xl'>Pending Amount</h2>
+                        <p className='text-3xl italic font-bold text-darkorange'>
+                            {pendingAmount || 0} AED
+                        </p>
+                    </div>
+                </div>
             </div>
             <div className='flex flex-row justify-center  items-center py-5 gap-x-5 w-full'></div>
         </>

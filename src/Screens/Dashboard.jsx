@@ -14,11 +14,14 @@ const Dashboard = () => {
         `pending-invoices/${companyName}`,
     )
     const { data: notifications } = useFetch(`${companyID}/employees/expiry`)
+    const { data: pendingAmount } = useFetch(
+        `total-pending-amount/${companyName}`,
+    )
 
     return (
         <>
             <Wrapper title={'Dashboard'}>
-                <div className='flex justify-between items-start px-5 rounded-md  gap-x-2 '>
+                <div className='flex justify-between items-start px-2 rounded-md  gap-x-2 '>
                     <div className='flex flex-col justify-start items-start gap-x-4  min-h-screen w-full gap-y-3'>
                         <div className='flex flex-col bg-bgLight p-3 w-full gap-y-2 rounded-b-lg shadow-[0_0_20px_0_rgba(0,0,0,0.5)]'>
                             <h4 className='lg:text-3xl text-2xl text-lightGold italic'>
@@ -33,7 +36,7 @@ const Dashboard = () => {
                                 <div className='flex flex-col gap-y-2'>
                                     <div className='flex flex-row justify-start items-center gap-x-5'>
                                         <p className='text-lightGold'>
-                                            Username:
+                                            Company Name:
                                         </p>
                                         <span> {company.username}</span>
                                     </div>
@@ -147,6 +150,7 @@ const Dashboard = () => {
                             employeeLength={employeeLength}
                             invoiceLength={invoiceLength}
                             pendingInvoiceLength={pendingInvoiceLength}
+                            pendingAmount={pendingAmount}
                         />
                         {notifications?.length > 0 && (
                             <NotificationCard notifications={notifications} />
