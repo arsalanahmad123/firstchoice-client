@@ -68,7 +68,7 @@ const Dashboard = () => {
                                     </div>
                                     <div className='flex flex-row justify-start items-center gap-x-5'>
                                         <p className=' text-lightGold'>
-                                            Image Card Expiry
+                                            Img Card Expiry
                                         </p>
                                         <span>
                                             {' '}
