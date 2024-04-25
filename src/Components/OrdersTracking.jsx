@@ -39,10 +39,10 @@ const OrdersTracking = ({ orders }) => {
                         <thead>
                             <tr className='bg-darkorange text-white  border-gray-700'>
                                 <th>Order</th>
-                                <th>Company</th>
                                 <th>Service</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
+                                <th>Pending Amount</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -50,12 +50,11 @@ const OrdersTracking = ({ orders }) => {
                             {filteredOrders?.map((item) => (
                                 <tr key={item._id}>
                                     <td>{item.title}</td>
-                                    <td>{item.company}</td>
                                     <td className='flex flex-row gap-x-1 flex-wrap'>
                                         {item.services?.map((service) => (
                                             <p
                                                 key={service.service}
-                                                className='badge'
+                                                className=''
                                             >
                                                 {service.service}
                                             </p>
@@ -73,8 +72,21 @@ const OrdersTracking = ({ orders }) => {
                                             ))}
                                         </div>
                                     </td>
-                                    <td>{item.total_price}</td>
+                                    <td>{item.total_price} AED</td>
+                                    <td>{item.pending_amount} AED </td>
                                     <td>{item.status ? item.status : 'N/A'}</td>
+                                    <td>
+                                        {item.services?.map((service) => {
+                                            service.employees?.map(
+                                                (employee) => (
+                                                    <p key={employee.name}>
+                                                        {employee.name} -{' '}
+                                                        {employee.status}
+                                                    </p>
+                                                ),
+                                            )
+                                        })}
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
