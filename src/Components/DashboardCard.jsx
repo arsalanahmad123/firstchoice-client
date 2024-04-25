@@ -9,10 +9,10 @@ const DashboardCard = ({
 }) => {
     return (
         <>
-            <div className='flex  flex-col gap-y-2  font-semibold md:flex-row justify-center  items-start py-1 gap-x-4 w-full md:flex-wrap'>
+            <div className='flex  flex-col gap-y-2  font-semibold md:flex-row justify-center  md:items-start items-center py-1 gap-x-4 w-full md:flex-wrap mb-5'>
                 <NavLink
                     to={'/employees'}
-                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md md:min-w-[200px] min-w-full'
                 >
                     <div className=''>
                         <h2 className='text-2xl'>Total Employees</h2>
@@ -23,7 +23,7 @@ const DashboardCard = ({
                 </NavLink>
                 <NavLink
                     to={'/orders'}
-                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md md:min-w-[200px] min-w-full'
                 >
                     <div className=''>
                         <h2 className=' text-2xl'>Invoices</h2>
@@ -35,7 +35,7 @@ const DashboardCard = ({
                 </NavLink>
                 <NavLink
                     to={'/orders'}
-                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'
+                    className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md md:min-w-[200px] min-w-full'
                 >
                     <div>
                         <h2 className='text-2xl'>Pending Orders</h2>
@@ -44,7 +44,7 @@ const DashboardCard = ({
                         </p>
                     </div>
                 </NavLink>
-                <div className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md min-w-[200px]'>
+                <div className='relative bg-[#dbcaff] text-black flex flex-col px-4 py-2 rounded-md md:min-w-[200px] min-w-full'>
                     <div className=''>
                         <h2 className='text-2xl'>Pending Amount</h2>
                         <p className='text-3xl italic font-bold text-darkorange'>
@@ -53,7 +53,6 @@ const DashboardCard = ({
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row justify-center  items-center py-5 gap-x-5 w-full'></div>
         </>
     )
 }

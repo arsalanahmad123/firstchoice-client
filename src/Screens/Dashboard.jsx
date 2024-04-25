@@ -4,6 +4,7 @@ import Wrapper from '../Layout/Wrapper'
 import DashboardCard from '../Components/DashboardCard'
 import NotificationCard from '../Components/NotificationCard'
 import { useFetch } from '../Hooks/useFetch'
+
 const Dashboard = () => {
     const company = JSON.parse(localStorage.getItem('company'))
     const companyID = company?._id
@@ -130,6 +131,7 @@ const Dashboard = () => {
                                                 (document, i) => (
                                                     <span
                                                         className='tooltip tooltip-success p-1 rounded-md bg-bgDarkColor text-xs'
+                                                        key={i}
                                                         data-tip='Click to View'
                                                     >
                                                         <a
