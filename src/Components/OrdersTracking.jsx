@@ -43,7 +43,8 @@ const OrdersTracking = ({ orders }) => {
                                 <th>Quantity</th>
                                 <th>Total Price</th>
                                 <th>Pending Amount</th>
-                                <th>Status</th>
+                                <th>Invoice Status</th>
+                                <th>Invoice Employee Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,16 +77,18 @@ const OrdersTracking = ({ orders }) => {
                                     <td>{item.pending_amount} AED </td>
                                     <td>{item.status ? item.status : 'N/A'}</td>
                                     <td>
-                                        {item.services?.map((service) => {
+                                        {item.services?.map((service) =>
                                             service.employees?.map(
                                                 (employee) => (
                                                     <p key={employee.name}>
-                                                        {employee.name} -{' '}
-                                                        {employee.status}
+                                                        <span className='text-lightGold font-bold'>
+                                                            {employee.name}
+                                                        </span>{' '}
+                                                        == {employee.status}
                                                     </p>
                                                 ),
-                                            )
-                                        })}
+                                            ),
+                                        )}
                                     </td>
                                 </tr>
                             ))}
