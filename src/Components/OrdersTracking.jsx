@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CgSearch } from 'react-icons/cg'
+import { Link } from 'react-router-dom'
 
 const OrdersTracking = ({ orders }) => {
     const [filteredOrders, setFilteredOrders] = useState(null)
@@ -45,6 +46,7 @@ const OrdersTracking = ({ orders }) => {
                                 <th>Pending Amount</th>
                                 <th>Invoice Status</th>
                                 <th>Invoice Employee Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,6 +91,14 @@ const OrdersTracking = ({ orders }) => {
                                                 ),
                                             ),
                                         )}
+                                    </td>
+                                    <td>
+                                        <Link
+                                            to={`/view-invoice/${item._id}`}
+                                            className='btn  btn-xs'
+                                        >
+                                            Print
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}
