@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ViewModal = ({ Employee }) => {
+const ViewModal = ({ Employee, setSelectedEmployee }) => {
     return (
         <>
             <dialog id='my_modal_2' className='modal'>
@@ -30,7 +30,9 @@ const ViewModal = ({ Employee }) => {
                     </div>
                 </div>
                 <form method='dialog' className='modal-backdrop'>
-                    <button>close</button>
+                    <button onClick={() => setSelectedEmployee(null)}>
+                        close
+                    </button>
                 </form>
             </dialog>
         </>
@@ -38,9 +40,12 @@ const ViewModal = ({ Employee }) => {
 }
 
 const EmployeeProfile = ({ employee }) => {
-    const toggleModal = () => {
-        const modal = document.getElementById('my_modal_2')
-        modal.showModal()
+    const [selectedEmployee, setSelectedEmployee] = React.useState(null)
+    const [showModal, setShowModal] = React.useState(false)
+    const toggleModal = (emp) => {
+        setSelectedEmployee(emp)
+        setShowModal(true)
+        document.getElementById('my_modal_2').showModal()
     }
 
     return (
@@ -98,12 +103,17 @@ const EmployeeProfile = ({ employee }) => {
                 <button
                     className='btn btn-xs btn-outline text-white'
                     onClick={() => {
-                        toggleModal()
+                        toggleModal(employee)
                     }}
                 >
                     View Documents
                 </button>
-                <ViewModal Employee={employee} />
+                {selectedEmployee && showModal && (
+                    <ViewModal
+                        Employee={selectedEmployee}
+                        setSelectedEmployee={setSelectedEmployee}
+                    />
+                )}
             </div>
         </div>
     )
