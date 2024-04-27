@@ -19,6 +19,8 @@ const Dashboard = () => {
         `total-pending-amount/${companyName}`,
     )
 
+    const twentyDaysFromNow = new Date(Date.now() + 24 * 60 * 60 * 1000 * 20)
+
     return (
         <>
             <Wrapper title={'Dashboard'}>
@@ -49,7 +51,18 @@ const Dashboard = () => {
                                         <p className=' text-lightGold'>Phone</p>
                                         <span> {company.phone}</span>
                                     </div>
-                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                    <div
+                                        className={`flex flex-row justify-start items-center gap-x-5
+                                        ${
+                                            new Date(
+                                                company.licence_expiry,
+                                            ).getTime() <
+                                            twentyDaysFromNow.getTime()
+                                                ? 'text-red-500 border-b-2 border-red-800 border-dashed'
+                                                : 'text-lightGold'
+                                        }
+                                        `}
+                                    >
                                         <p className=' text-lightGold'>
                                             Licence Expiry
                                         </p>
@@ -67,7 +80,18 @@ const Dashboard = () => {
                                             ).getFullYear()}
                                         </span>
                                     </div>
-                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                    <div
+                                        className={`flex flex-row justify-start items-center gap-x-5
+                                        ${
+                                            new Date(
+                                                company.img_card_expiry,
+                                            ).getTime() <
+                                            twentyDaysFromNow.getTime()
+                                                ? 'text-red-500 border-b-2 border-red-800 border-dashed'
+                                                : 'text-lightGold'
+                                        }
+                                        `}
+                                    >
                                         <p className=' text-lightGold'>
                                             Img Card Expiry
                                         </p>
@@ -86,7 +110,18 @@ const Dashboard = () => {
                                             ).getFullYear()}
                                         </span>
                                     </div>
-                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                    <div
+                                        className={`flex flex-row justify-start items-center gap-x-5
+                                        ${
+                                            new Date(
+                                                company.least_contract_expiry,
+                                            ).getTime() <
+                                            twentyDaysFromNow.getTime()
+                                                ? 'text-red-500 border-b-2 border-red-800 border-dashed'
+                                                : 'text-lightGold'
+                                        }
+                                        `}
+                                    >
                                         <p className=' text-lightGold'>
                                             Least Contract Expiry
                                         </p>
@@ -104,7 +139,18 @@ const Dashboard = () => {
                                             ).getFullYear()}
                                         </span>
                                     </div>
-                                    <div className='flex flex-row justify-start items-center gap-x-5'>
+                                    <div
+                                        className={`flex flex-row justify-start items-center gap-x-5
+                                        ${
+                                            new Date(
+                                                company.e_channel_expiry,
+                                            ).getTime() <
+                                            twentyDaysFromNow.getTime()
+                                                ? 'text-red-500 border-b-2 border-red-800 border-dashed'
+                                                : 'text-lightGold'
+                                        }
+                                        `}
+                                    >
                                         <p className=' text-lightGold'>
                                             E-Channel Expiry
                                         </p>

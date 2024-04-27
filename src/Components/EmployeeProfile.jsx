@@ -44,20 +44,24 @@ const EmployeeProfile = ({ employee }) => {
     }
 
     return (
-        <div className='flex flex-col justify-start  items-start text-white  rounded-xl  md:gap-y-2   bg-bgLight px-5 py-4'>
-            <h2 className='text-2xl text-lightGold text-left'>
-                {employee.name}
+        <div className='bg-gradient-to-r from-bgLight to-bgDarkColor text-white shadow-2xl  flex justify-center flex-col p-5 gap-y-5  min-h-36'>
+            <h2 className='font-extrabold flex flex-row justify-between items-center gap-x-2 text-xl'>
+                <span className=''>Name: </span>
+
+                <span className='text-left text-lightGold uppercase whitespace-normal w-[300px] break-words'>
+                    {employee?.name}
+                </span>
             </h2>
-            <div className='flex flex-col gap-y-2 '>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+            <div className='flex flex-col gap-y-1'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>Nationality</p>
                     <p className='text-sm text-left'>{employee.nationality}</p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>EID Number</p>
                     <p className='text-sm text-left'>{employee.eid_no}</p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>EID Expiry</p>
                     <p className='text-sm text-left'>
                         {new Date(employee.eid_expiry).getDate()}/
@@ -65,13 +69,13 @@ const EmployeeProfile = ({ employee }) => {
                         {new Date(employee.eid_expiry).getFullYear()}
                     </p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>Labor Card Number</p>
                     <p className='text-sm text-left'>
                         {employee.labor_card_no}
                     </p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>Labor Card Expiry</p>
                     <p className='text-sm text-left'>
                         {new Date(employee.labor_card_expiry).getDate()}/
@@ -79,11 +83,11 @@ const EmployeeProfile = ({ employee }) => {
                         {new Date(employee.labor_card_expiry).getFullYear()}
                     </p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>Passport No</p>
                     <p className='text-sm text-left'>{employee.passport_no}</p>
                 </div>
-                <div className='flex flex-row justify-between items-center gap-x-5'>
+                <div className='flex flex-row justify-between items-center gap-x-2'>
                     <p className='text-[15px] text-left'>Passport Expiry</p>
                     <p className='text-sm text-left'>
                         {new Date(employee.passport_expiry).getDate()}/
@@ -92,7 +96,7 @@ const EmployeeProfile = ({ employee }) => {
                     </p>
                 </div>
                 <button
-                    className='text-gray-900 font-semibold text-sm w-52 px-2 lg:py-1 lg:rounded-2xl bg-gradient-to-b from-yellow-400 to-yellow-600'
+                    className='btn btn-xs btn-outline text-white'
                     onClick={() => {
                         toggleModal()
                     }}
